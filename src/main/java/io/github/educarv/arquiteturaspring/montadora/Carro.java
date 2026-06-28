@@ -46,4 +46,12 @@ public class Carro {
         this.motor = motor;
         this.montadora = montadora;
     }
+
+    public CarroStatus darPartida(Chave chave) {
+        if(chave.getMontadora() == this.montadora) {
+            return new CarroStatus("Carro ligado com sucesso!");
+        } else {
+            return new CarroStatus("Chave inválida para este carro.");
+        }
+    }
 }

@@ -7,6 +7,12 @@ public class Motor {
     private Double litragem;
     private TipoMotor tipoMotor;
 
+    @Override
+    public String toString() {
+        return "Motor [modelo=" + modelo + ", cavalos=" + cavalos + ", cilindros=" + cilindros + ", litragem="
+                + litragem + ", tipoMotor=" + tipoMotor + "]";
+    }
+
     public String getModelo() {
         return modelo;
     }

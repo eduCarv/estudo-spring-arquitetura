@@ -4,7 +4,7 @@ import java.awt.*;
 
 public class HondaHRV extends Carro {
     public HondaHRV(Color cor, Motor motor) {
-        super("Honda HR-V", cor.BLACK, motor, Montadora.HONDA); // Chama o construtor da classe pai (Carro) com os parâmetros específicos do Honda HR-V
+        super("Honda HR-V", Color.BLACK, motor, Montadora.HONDA); // Chama o construtor da classe pai (Carro) com os parâmetros específicos do Honda HR-V
     }
 
 }
