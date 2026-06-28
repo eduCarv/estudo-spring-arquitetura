@@ -1,5 +1,7 @@
 package io.github.educarv.arquiteturaspring.montadora.api;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,14 +17,14 @@ import io.github.educarv.arquiteturaspring.montadora.Motor;
 public class TesteFabricaController {
 
     // Injeção de dependência do Motor
-    // @Autowired
-    // private Motor motor;
+    @Autowired
+    @Qualifier("motorEletrico") // ou "motorTurbo", dependendo do motor que você deseja injetar
+    private Motor motor;
 
-    private final Motor motor;
-
-    TesteFabricaController(Motor motor) {
-        this.motor = motor;
-    }
+    // private final Motor motor;
+    // TesteFabricaController(Motor motor) {
+    //     this.motor = motor;
+    // }
 
     @PostMapping
     public CarroStatus ligarCarro(@RequestBody Chave chave) {

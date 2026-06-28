@@ -49,7 +49,7 @@ public class Carro {
 
     public CarroStatus darPartida(Chave chave) {
         if(chave.getMontadora() == this.montadora) {
-            return new CarroStatus("Carro ligado com sucesso!");
+            return new CarroStatus("Carro ligado com sucesso! Rodando com o motor: " + motor.toString());
         } else {
             return new CarroStatus("Chave inválida para este carro.");
         }

@@ -9,15 +9,37 @@ import io.github.educarv.arquiteturaspring.montadora.TipoMotor;
 @Configuration
 public class MontadoraConfiguration {
 
-    @Bean // Define um bean do tipo Motor que poderá ser injetado em outras classes do
+    @Bean(name ="motorAspirado") // Define um bean do tipo Motor que poderá ser injetado em outras classes do
           // Spring
-    public Motor motor() {
+    public Motor motorAspirado() {
         var motor = new Motor();
-        motor.setCavalos(200);
-        motor.setCilindros(6);
+        motor.setCavalos(120);
+        motor.setCilindros(4);
         motor.setModelo("XPTO");
-        motor.setLitragem(2.5);
+        motor.setLitragem(1.8);
         motor.setTipoMotor(TipoMotor.ASPIRADO);
+        return motor;
+    }
+
+    @Bean(name ="motorEletrico")
+    public Motor motorEletrico() {
+        var motor = new Motor();
+        motor.setCavalos(110);
+        motor.setCilindros(0);
+        motor.setModelo("BYDX");
+        motor.setLitragem(0.0);
+        motor.setTipoMotor(TipoMotor.ELETRICO);
+        return motor;
+    }
+
+    @Bean(name ="motorHibrido")
+    public Motor motorTurbo() {
+        var motor = new Motor();
+        motor.setCavalos(250);
+        motor.setCilindros(6);
+        motor.setModelo("XPTO-TURBO");
+        motor.setLitragem(2.5);
+        motor.setTipoMotor(TipoMotor.TURBO);
         return motor;
     }
 }
