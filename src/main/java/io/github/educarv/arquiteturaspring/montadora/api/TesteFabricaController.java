@@ -18,7 +18,8 @@ public class TesteFabricaController {
 
     // Injeção de dependência do Motor
     @Autowired
-    @Qualifier("motorEletrico") // ou "motorTurbo", dependendo do motor que você deseja injetar
+    // @Qualifier("motorEletrico") // ou "motorTurbo", dependendo do motor que você deseja injetar    
+    @Aspirado
     private Motor motor;
 
     // private final Motor motor;

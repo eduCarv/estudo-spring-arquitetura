@@ -2,6 +2,7 @@ package io.github.educarv.arquiteturaspring.montadora.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 import io.github.educarv.arquiteturaspring.montadora.Motor;
 import io.github.educarv.arquiteturaspring.montadora.TipoMotor;
@@ -9,8 +10,7 @@ import io.github.educarv.arquiteturaspring.montadora.TipoMotor;
 @Configuration
 public class MontadoraConfiguration {
 
-    @Bean(name ="motorAspirado") // Define um bean do tipo Motor que poderá ser injetado em outras classes do
-          // Spring
+    @Bean(name ="motorAspirado") // Define um bean do tipo Motor que poderá ser injetado em outras classes do Spring    
     public Motor motorAspirado() {
         var motor = new Motor();
         motor.setCavalos(120);
@@ -22,6 +22,7 @@ public class MontadoraConfiguration {
     }
 
     @Bean(name ="motorEletrico")
+    @Primary
     public Motor motorEletrico() {
         var motor = new Motor();
         motor.setCavalos(110);
